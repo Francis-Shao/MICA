@@ -1,0 +1,25 @@
+{
+    "temporal_relations": [
+        {
+            "source_state_id": "CruiseAV_B0_S0",
+            "target_state_id": "ToyotaSedan_B0_S0",
+            "source_vehicle": "Cruise AV",
+            "source_behavior": "Stationary",
+            "source_behavior_order": 0,
+            "source_state_index": 0,
+            "target_vehicle": "Toyota Sedan",
+            "target_behavior": "Turn Right",
+            "target_behavior_order": 0,
+            "target_state_index": 0,
+            "relation": "When",
+            "source_spans": [
+                "was stopped at a red light",
+                "At the same time"
+            ],
+            "source_sentences": [
+                "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street.",
+                "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+            ]
+        }
+    ]
+}

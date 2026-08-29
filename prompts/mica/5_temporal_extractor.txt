@@ -1,0 +1,169 @@
+You are an expert in accident report analysis and accident information extraction. Your task is to analyze the following accident report and checked state information, and extract temporal relations between states belonging to different vehicles.
+
+Accident Report Description:
+{accident_report}
+
+Checked State Information:
+{state_json}
+
+Potential Temporal Relation Candidates:
+{candidate_json}
+
+Question:
+What temporal relations can be derived between states belonging to different vehicles?
+
+Temporal Relation Definition:
+
+When:
+Two states occur simultaneously or their active periods overlap.
+
+Typical indicators include:
+- when
+- while
+- as
+- during
+- meanwhile
+- simultaneously
+- at the same time
+- in response to the same event
+- shared initial traffic scene
+- parallel or alongside movement
+
+Initial Scene Synchronization:
+If multiple vehicles are described as being located in the same initial traffic scene, such as waiting at the same red light, stopped at the same intersection, or positioned relative to each other before movement begins, their initial states may be treated as occurring "When" each other, even if no explicit word such as "when" or "while" appears.
+
+State Reference Rules:
+(1) Each temporal relation must reference existing states from Checked State Information.
+(2) Use source_state_id and target_state_id to identify relation endpoints.
+(3) Do not create new states, new vehicles, or new behaviors.
+(4) Do not use a behavior or state that is not listed in Checked State Information.
+(5) The source_state_id and target_state_id must be copied exactly from Checked State Information.
+(6) The source and target states must belong to different vehicles.
+(7) The source_vehicle, source_behavior, source_behavior_order, and source_state_index must match the source_state_id.
+(8) The target_vehicle, target_behavior, target_behavior_order, and target_state_index must match the target_state_id.
+
+Candidate Usage Rules:
+(1) Potential Temporal Relation Candidates are not final answers.
+(2) Use the candidates to check potentially missing temporal relations.
+(3) Output a candidate relation only if it is supported by the accident report and both endpoints are existing states.
+(4) For an initial_scene_synchronization candidate, output a compact set of When relations using one anchor state rather than all possible pairwise combinations.
+(5) For example, if three initial states A, B, and C occur in the same initial scene, output A When B and A When C, rather than A When B, A When C, and B When C.
+(6) For a parallel_movement_synchronization candidate, output When only if the states represent movement or continuing movement of different vehicles.
+
+Extraction Rules:
+(1) Only extract temporal relations between states belonging to different vehicles.
+(2) Do not extract temporal relations between states belonging to the same vehicle.
+(3) Only extract temporal relations that are explicitly stated or clearly implied by the accident report.
+(4) A temporal relation must be supported by a temporal expression, temporal phrase, shared initial traffic scene, or clearly described temporal dependency.
+(5) Do not infer temporal relations from common traffic knowledge or assumptions.
+(6) Do not create temporal relations solely based on sentence order.
+(7) If no explicit or clearly implied temporal relation exists between two states, do not create a relation.
+(8) Match the temporal relation to the most specific states supported by the report.
+(9) Do not create duplicate temporal relations.
+(10) For each temporal relation, provide the report text span(s) and sentence(s) used to derive the relation.
+(11) Use "When" when the report indicates simultaneous, overlapping, concurrent, initially synchronized, or parallel state occurrences.
+(12) If multiple states could match the same evidence, select the state that is most directly referenced by the temporal expression or candidate.
+(13) Returning fewer relations is preferred over introducing unsupported relations.
+(14) Do not create Collision as a behavior, state, or temporal relation endpoint.
+(15) If a sentence describes a collision using phrases such as "made contact", "hit", "struck", or "collided", do not extract the collision event in this task.
+(16) However, temporal relations between non-collision states in the same sentence may still be extracted if explicitly supported.
+(17) Do not extract same-vehicle temporal order, because same-vehicle order is already represented by behavior_order and state_index.
+(18) The output should focus on cross-vehicle temporal dependencies needed for scenario synchronization.
+(19) Initial states of different vehicles may be linked by "When" if they describe the same initial traffic scene.
+(20) A shared initial scene may be indicated by phrases such as "at a red light", "at the intersection", "in front of", "to the right of", or other relative-position descriptions before vehicles start moving.
+(21) Do not create temporal relations involving states that only describe collision occurrence, contact, impact, or damage.
+(22) A temporal relation should represent synchronization or ordering between vehicle motion states, not the collision event itself.
+
+Output Constraints:
+(1) The output must be valid JSON format.
+(2) Do not include explanations or additional text.
+(3) Use only relation values from: "When".
+(4) Use the following format:
+
+{{
+  "temporal_relations": [
+    {{
+      "source_state_id": "StateID",
+      "target_state_id": "StateID",
+
+      "source_vehicle": "Vehicle Name",
+      "source_behavior": "Behavior Name",
+      "source_behavior_order": 0,
+      "source_state_index": 0,
+
+      "target_vehicle": "Vehicle Name",
+      "target_behavior": "Behavior Name",
+      "target_behavior_order": 0,
+      "target_state_index": 0,
+
+      "relation": "When",
+
+      "source_spans": [
+        "Supporting Span"
+      ],
+
+      "source_sentences": [
+        "Supporting Sentence"
+      ]
+    }}
+  ]
+}}
+
+Example Output:
+{{
+  "temporal_relations": [
+    {{
+      "source_state_id": "CruiseAV_B0_S0",
+      "target_state_id": "AcuraSedan_B0_S0",
+
+      "source_vehicle": "Cruise AV",
+      "source_behavior": "Stationary",
+      "source_behavior_order": 0,
+      "source_state_index": 0,
+
+      "target_vehicle": "Acura Sedan",
+      "target_behavior": "Stationary",
+      "target_behavior_order": 0,
+      "target_state_index": 0,
+
+      "relation": "When",
+
+      "source_spans": [
+        "at a complete stop",
+        "was stopped in front of the Cruise AV"
+      ],
+
+      "source_sentences": [
+        "A Cruise autonomous vehicle (\\\"Cruise AV\\\"), operating in driverless autonomous mode, was at a complete stop in response to a red light on southbound Masonic Avenue at the intersection with Oak Street.",
+        "At the intersection, an Acura Sedan was stopped in front of the Cruise AV in the left southbound lane."
+      ]
+    }},
+    {{
+      "source_state_id": "CruiseAV_B1_S0",
+      "target_state_id": "BMWSedan_B2_S0",
+
+      "source_vehicle": "Cruise AV",
+      "source_behavior": "Proceed Straight",
+      "source_behavior_order": 1,
+      "source_state_index": 0,
+
+      "target_vehicle": "BMW Sedan",
+      "target_behavior": "Turn Left",
+      "target_behavior_order": 2,
+      "target_state_index": 0,
+
+      "relation": "When",
+
+      "source_spans": [
+        "As the Cruise AV entered the intersection",
+        "the BMW Sedan made a prohibited left turn"
+      ],
+
+      "source_sentences": [
+        "As the Cruise AV entered the intersection, the BMW Sedan made a prohibited left turn from the right southbound lane on Masonic Avenue with no turn signal."
+      ]
+    }}
+  ]
+}}
+
+Answer:

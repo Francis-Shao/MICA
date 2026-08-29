@@ -1,0 +1,117 @@
+You are an expert in accident report analysis and extraction result validation.
+
+Your task is to check whether the extracted state timelines are correct according to the accident report and the given behavior timelines, and revise them when necessary.
+
+Accident Report Description:
+{accident_report}
+
+Behavior Timelines:
+{behavior_json}
+
+Extracted State Timelines:
+{state_json}
+
+Potential State Inconsistency Hints:
+{state_hints_json}
+
+Valid Position Values:
+{valid_positions}
+
+Valid Speed Values:
+{valid_speeds}
+
+State Definition:
+A state is defined by Position and Speed.
+
+Position:
+Outside Intersection: The vehicle is located outside an intersection.
+Inside Intersection: The vehicle is located inside an intersection.
+Parking Lot: The vehicle is located inside a parking area or parking lot.
+
+Speed:
+Stopped: The vehicle is not moving.
+Maintain: The vehicle is moving without explicit acceleration or deceleration.
+Accelerate: The vehicle is increasing its speed.
+Decelerate: The vehicle is decreasing its speed.
+
+Mandatory Checking Procedure:
+Step 1: Check whether each state belongs to the corresponding behavior in Behavior Timelines.
+
+Step 2: Check whether the behavior order and behavior names in Extracted State Timelines exactly match the given Behavior Timelines.
+
+Step 3: Check whether Position and Speed values are selected only from the valid value lists.
+
+Step 4: Check whether Speed is consistent with the behavior:
+- Stationary should have Speed "Stopped".
+- Brake should have Speed "Decelerate".
+- Proceed Straight, Turn Left, Turn Right, Make U-Turn, Back, Change Lane, Enter Opposite Lane, Park, and Unpark should usually have Speed "Maintain" unless acceleration or deceleration is explicitly stated.
+
+Step 5: Check whether Position is supported by the report:
+- If the vehicle is waiting at a red light, stopped before entering an intersection, approaching an intersection, or traveling outside an intersection, use "Outside Intersection".
+- If the vehicle enters or moves within an intersection, use "Inside Intersection".
+- If the vehicle is in a parking lot or parking area, use "Parking Lot".
+
+Step 6: Check whether any Position transition is supported by evidence.
+For example, "entered the intersection" supports a transition from Outside Intersection to Inside Intersection.
+
+Step 7: Check whether each source span actually supports the corresponding state of the same vehicle and behavior.
+
+Step 8: Use Potential State Inconsistency Hints as hints, but verify them against the accident report before revising.
+
+Step 9: Return the complete corrected state timelines, not only the changed parts.
+
+Important Rules:
+(1) Do not create, remove, rename, or reorder behaviors.
+(2) The corrected state timelines must preserve exactly the same vehicles, behaviors, and behavior order as Behavior Timelines.
+(3) You may revise states under each behavior.
+(4) Each behavior must contain at least one state.
+(5) A behavior may contain multiple states only if Position or Speed changes during that behavior.
+(6) Do not infer lane numbers, coordinates, distances, exact speed values, or vehicle directions.
+(7) If Position cannot be determined for a behavior, inherit the most recent Position of the same vehicle.
+(8) If Speed cannot be determined for a behavior, infer Speed from the behavior type.
+(9) Evidence must be copied verbatim from the report and must not be paraphrased.
+(10) Source sentences must be complete sentences copied verbatim from the report.
+(11) If a source sentence contains actions of multiple vehicles, assign each source span only to the vehicle and behavior it describes.
+(12) Do not use a source span describing one vehicle as evidence for another vehicle.
+
+Output Constraints:
+(1) The output must be valid JSON.
+(2) Do not include explanations outside JSON.
+(3) Use the following format:
+
+{{
+  "is_valid": true or false,
+  "errors": [
+    {{
+      "vehicle_name": "Vehicle Name",
+      "behavior": "Behavior Name",
+      "error_type": "wrong_position | wrong_speed | unsupported_state | wrong_evidence | behavior_mismatch | unsupported_transition",
+      "description": "Brief description of the error.",
+      "evidence": [
+        "Relevant report span"
+      ],
+      "suggested_fix": "Brief description of the fix."
+    }}
+  ],
+  "corrected_state_timelines": {{
+    "Vehicle Name": [
+      {{
+        "behavior": "Behavior Name",
+        "states": [
+          {{
+            "position": "Position Value",
+            "speed": "Speed Value",
+            "source_spans": [
+              "supporting span"
+            ],
+            "source_sentences": [
+              "complete supporting sentence"
+            ]
+          }}
+        ]
+      }}
+    ]
+  }}
+}}
+
+Answer:

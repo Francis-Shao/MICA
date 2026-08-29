@@ -1,0 +1,55 @@
+{
+    "is_valid": true,
+    "errors": [],
+    "corrected_behavior_timelines": {
+        "Cruise AV": [
+            {
+                "behavior": "Stationary",
+                "source_spans": [
+                    "was stopped at a red light"
+                ],
+                "source_sentences": [
+                    "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street."
+                ]
+            },
+            {
+                "behavior": "Proceed Straight",
+                "source_spans": [
+                    "continued straight through the intersection"
+                ],
+                "source_sentences": [
+                    "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                ]
+            },
+            {
+                "behavior": "Brake",
+                "source_spans": [
+                    "before braking"
+                ],
+                "source_sentences": [
+                    "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                ]
+            },
+            {
+                "behavior": "Stationary",
+                "source_spans": [
+                    "coming to a complete stop"
+                ],
+                "source_sentences": [
+                    "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                ]
+            }
+        ],
+        "Toyota Sedan": [
+            {
+                "behavior": "Turn Right",
+                "source_spans": [
+                    "was making an unprotected right turn on a red light"
+                ],
+                "source_sentences": [
+                    "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                ]
+            }
+        ]
+    }
+}

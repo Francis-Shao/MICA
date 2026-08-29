@@ -1,0 +1,26 @@
+You are given an accident report and a list of pre-crash scenario categories.
+Your task is to identify the most appropriate pre-crash scenario category for the accident.
+
+Accident Report:
+{report}
+
+Pre-crash Scenario Categories:
+Backing into Vehicle - A vehicle collides with another vehicle while backing.
+Turning/Same Direction - A vehicle turns and cuts across the path of another vehicle initially traveling in the same direction.
+Parking/Same Direction - A vehicle is entering or leaving a parked position and collides with another vehicle.
+Changing Lanes/Same Direction - A vehicle changes lanes and encroaches into another vehicle traveling in the same direction.
+Opposite Direction/Maneuver - A vehicle makes a maneuver, such as passing, and encroaches into another vehicle traveling in the opposite direction.
+Rear-End/Striking Maneuver (FVM) - A vehicle changes lanes or passes another vehicle, and closes in on a vehicle ahead in the same lane.
+Rear-End/Lead Vehicle Accelerating (LVA) - A vehicle closes in on an accelerating lead vehicle ahead in the same lane.
+Rear-End/Lead Vehicle Moving (LVM) - A vehicle closes in on a moving vehicle ahead in the same lane.
+Rear-End/Lead Vehicle Decelerating (LVD) - A vehicle closes in on a decelerating lead vehicle ahead in the same lane.
+Rear-End/Lead Vehicle Stopped (LVS) - A vehicle closes in on a stopped lead vehicle ahead in the same lane.
+Right Turn Into Path (RTIP) - A vehicle is turning right at an intersection and turns into the same direction of another vehicle crossing from a lateral direction.
+Right Turn Across Path (RTAP) - A vehicle is turning right at an intersection and turns into the opposite direction of another vehicle crossing from a lateral direction.
+Straight Crossing Paths (SCP) - A vehicle is going straight and collides with another straight crossing vehicle from a lateral direction at an intersection.
+Left Turn Across Path, Lateral Direction (LTAP/LD) - A vehicle turns left at an intersection and crosses the path of another vehicle traveling in the opposite direction from a lateral direction.
+Left Turn Into Path (LTIP) - A vehicle turns left at an intersection and turns into the path of another vehicle traveling in the same direction from a lateral direction.
+Left Turn Across Path/Opposite Direction (LTAP/OD) - A vehicle turns left at an intersection and crosses the path of another vehicle traveling in the opposite direction.
+
+
+Please output only the category name. Do not provide explanations. If you cannot identify the category, output "Unmatched".

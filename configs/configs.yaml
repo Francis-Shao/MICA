@@ -1,0 +1,10 @@
+## LLM
+### Api Setting
+base_url: https://api_url
+api_key: sk-xxxxxx
+
+### LLM Model Setting
+llm_model: openai/gpt-5.4-mini
+
+### LLM Parameter Setting
+temperature: 0.5

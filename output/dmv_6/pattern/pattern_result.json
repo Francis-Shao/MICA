@@ -1,0 +1,372 @@
+{
+    "pattern_sequence": [
+        {
+            "slice_id": "S0",
+            "slice_order": 0,
+            "patterns": [
+                {
+                    "pattern_id": "RTIP",
+                    "pattern_name": "Right Turn Into Path (RTIP)",
+                    "slice_id": "S0",
+                    "subject_vehicle": "Toyota Sedan",
+                    "target_vehicle": "Cruise AV",
+                    "confidence": 1.0,
+                    "matched_conditions": [
+                        "subject_behavior=turn right",
+                        "target_behavior=stationary",
+                        "relation=lateral-lane-left",
+                        "subject_speed=maintain",
+                        "target_speed=stopped",
+                        "subject_position=outside intersection",
+                        "target_position=outside intersection"
+                    ],
+                    "evidence": {
+                        "subject_state_id": "ToyotaSedan_B0_S0",
+                        "target_state_id": "CruiseAV_B0_S0",
+                        "relation": {
+                            "slice_id": "S0",
+                            "reference_state_id": "ToyotaSedan_B0_S0",
+                            "reference_vehicle": "Toyota Sedan",
+                            "reference_behavior": "Turn Right",
+                            "reference_behavior_order": 0,
+                            "reference_state_index": 0,
+                            "target_state_id": "CruiseAV_B0_S0",
+                            "target_vehicle": "Cruise AV",
+                            "target_behavior": "Stationary",
+                            "target_behavior_order": 0,
+                            "target_state_index": 0,
+                            "relation": "lateral-lane-left",
+                            "source_spans": [],
+                            "source_sentences": [],
+                            "is_reversed": true
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "slice_id": "S1",
+            "slice_order": 1,
+            "patterns": [
+                {
+                    "pattern_id": "RTIP",
+                    "pattern_name": "Right Turn Into Path (RTIP)",
+                    "slice_id": "S1",
+                    "subject_vehicle": "Toyota Sedan",
+                    "target_vehicle": "Cruise AV",
+                    "confidence": 1.0,
+                    "matched_conditions": [
+                        "subject_behavior=turn right",
+                        "target_behavior=proceed straight",
+                        "relation=lateral-lane-left",
+                        "subject_speed=maintain",
+                        "target_speed=maintain",
+                        "subject_position=outside intersection",
+                        "target_position=inside intersection"
+                    ],
+                    "evidence": {
+                        "subject_state_id": "ToyotaSedan_B0_S0",
+                        "target_state_id": "CruiseAV_B1_S0",
+                        "relation": {
+                            "slice_id": "S1",
+                            "reference_state_id": "ToyotaSedan_B0_S0",
+                            "reference_vehicle": "Toyota Sedan",
+                            "reference_behavior": "Turn Right",
+                            "reference_behavior_order": 1,
+                            "reference_state_index": 0,
+                            "target_state_id": "CruiseAV_B1_S0",
+                            "target_vehicle": "Cruise AV",
+                            "target_behavior": "Proceed Straight",
+                            "target_behavior_order": 0,
+                            "target_state_index": 0,
+                            "relation": "lateral-lane-left",
+                            "source_spans": [],
+                            "source_sentences": [],
+                            "is_reversed": true
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "slice_id": "S2",
+            "slice_order": 2,
+            "patterns": [
+                {
+                    "pattern_id": "RTIP",
+                    "pattern_name": "Right Turn Into Path (RTIP)",
+                    "slice_id": "S2",
+                    "subject_vehicle": "Toyota Sedan",
+                    "target_vehicle": "Cruise AV",
+                    "confidence": 1.0,
+                    "matched_conditions": [
+                        "subject_behavior=turn right",
+                        "target_behavior=brake",
+                        "relation=lateral-lane-left",
+                        "subject_speed=maintain",
+                        "target_speed=decelerate",
+                        "subject_position=outside intersection",
+                        "target_position=inside intersection"
+                    ],
+                    "evidence": {
+                        "subject_state_id": "ToyotaSedan_B0_S0",
+                        "target_state_id": "CruiseAV_B2_S0",
+                        "relation": {
+                            "slice_id": "S2",
+                            "reference_state_id": "ToyotaSedan_B0_S0",
+                            "reference_vehicle": "Toyota Sedan",
+                            "reference_behavior": "Turn Right",
+                            "reference_behavior_order": 2,
+                            "reference_state_index": 0,
+                            "target_state_id": "CruiseAV_B2_S0",
+                            "target_vehicle": "Cruise AV",
+                            "target_behavior": "Brake",
+                            "target_behavior_order": 0,
+                            "target_state_index": 0,
+                            "relation": "lateral-lane-left",
+                            "source_spans": [],
+                            "source_sentences": [],
+                            "is_reversed": true
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "slice_id": "S3",
+            "slice_order": 3,
+            "patterns": [
+                {
+                    "pattern_id": "RTIP",
+                    "pattern_name": "Right Turn Into Path (RTIP)",
+                    "slice_id": "S3",
+                    "subject_vehicle": "Toyota Sedan",
+                    "target_vehicle": "Cruise AV",
+                    "confidence": 1.0,
+                    "matched_conditions": [
+                        "subject_behavior=turn right",
+                        "target_behavior=stationary",
+                        "relation=lateral-lane-left",
+                        "subject_speed=maintain",
+                        "target_speed=stopped",
+                        "subject_position=outside intersection",
+                        "target_position=inside intersection"
+                    ],
+                    "evidence": {
+                        "subject_state_id": "ToyotaSedan_B0_S0",
+                        "target_state_id": "CruiseAV_B3_S0",
+                        "relation": {
+                            "slice_id": "S3",
+                            "reference_state_id": "ToyotaSedan_B0_S0",
+                            "reference_vehicle": "Toyota Sedan",
+                            "reference_behavior": "Turn Right",
+                            "reference_behavior_order": 3,
+                            "reference_state_index": 0,
+                            "target_state_id": "CruiseAV_B3_S0",
+                            "target_vehicle": "Cruise AV",
+                            "target_behavior": "Stationary",
+                            "target_behavior_order": 0,
+                            "target_state_index": 0,
+                            "relation": "lateral-lane-left",
+                            "source_spans": [],
+                            "source_sentences": [],
+                            "is_reversed": true
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "pattern_matches": [
+        {
+            "pattern_id": "RTIP",
+            "pattern_name": "Right Turn Into Path (RTIP)",
+            "slice_id": "S0",
+            "subject_vehicle": "Toyota Sedan",
+            "target_vehicle": "Cruise AV",
+            "confidence": 1.0,
+            "matched_conditions": [
+                "subject_behavior=turn right",
+                "target_behavior=stationary",
+                "relation=lateral-lane-left",
+                "subject_speed=maintain",
+                "target_speed=stopped",
+                "subject_position=outside intersection",
+                "target_position=outside intersection"
+            ],
+            "evidence": {
+                "subject_state_id": "ToyotaSedan_B0_S0",
+                "target_state_id": "CruiseAV_B0_S0",
+                "relation": {
+                    "slice_id": "S0",
+                    "reference_state_id": "ToyotaSedan_B0_S0",
+                    "reference_vehicle": "Toyota Sedan",
+                    "reference_behavior": "Turn Right",
+                    "reference_behavior_order": 0,
+                    "reference_state_index": 0,
+                    "target_state_id": "CruiseAV_B0_S0",
+                    "target_vehicle": "Cruise AV",
+                    "target_behavior": "Stationary",
+                    "target_behavior_order": 0,
+                    "target_state_index": 0,
+                    "relation": "lateral-lane-left",
+                    "source_spans": [],
+                    "source_sentences": [],
+                    "is_reversed": true
+                }
+            }
+        },
+        {
+            "pattern_id": "RTIP",
+            "pattern_name": "Right Turn Into Path (RTIP)",
+            "slice_id": "S1",
+            "subject_vehicle": "Toyota Sedan",
+            "target_vehicle": "Cruise AV",
+            "confidence": 1.0,
+            "matched_conditions": [
+                "subject_behavior=turn right",
+                "target_behavior=proceed straight",
+                "relation=lateral-lane-left",
+                "subject_speed=maintain",
+                "target_speed=maintain",
+                "subject_position=outside intersection",
+                "target_position=inside intersection"
+            ],
+            "evidence": {
+                "subject_state_id": "ToyotaSedan_B0_S0",
+                "target_state_id": "CruiseAV_B1_S0",
+                "relation": {
+                    "slice_id": "S1",
+                    "reference_state_id": "ToyotaSedan_B0_S0",
+                    "reference_vehicle": "Toyota Sedan",
+                    "reference_behavior": "Turn Right",
+                    "reference_behavior_order": 1,
+                    "reference_state_index": 0,
+                    "target_state_id": "CruiseAV_B1_S0",
+                    "target_vehicle": "Cruise AV",
+                    "target_behavior": "Proceed Straight",
+                    "target_behavior_order": 0,
+                    "target_state_index": 0,
+                    "relation": "lateral-lane-left",
+                    "source_spans": [],
+                    "source_sentences": [],
+                    "is_reversed": true
+                }
+            }
+        },
+        {
+            "pattern_id": "RTIP",
+            "pattern_name": "Right Turn Into Path (RTIP)",
+            "slice_id": "S2",
+            "subject_vehicle": "Toyota Sedan",
+            "target_vehicle": "Cruise AV",
+            "confidence": 1.0,
+            "matched_conditions": [
+                "subject_behavior=turn right",
+                "target_behavior=brake",
+                "relation=lateral-lane-left",
+                "subject_speed=maintain",
+                "target_speed=decelerate",
+                "subject_position=outside intersection",
+                "target_position=inside intersection"
+            ],
+            "evidence": {
+                "subject_state_id": "ToyotaSedan_B0_S0",
+                "target_state_id": "CruiseAV_B2_S0",
+                "relation": {
+                    "slice_id": "S2",
+                    "reference_state_id": "ToyotaSedan_B0_S0",
+                    "reference_vehicle": "Toyota Sedan",
+                    "reference_behavior": "Turn Right",
+                    "reference_behavior_order": 2,
+                    "reference_state_index": 0,
+                    "target_state_id": "CruiseAV_B2_S0",
+                    "target_vehicle": "Cruise AV",
+                    "target_behavior": "Brake",
+                    "target_behavior_order": 0,
+                    "target_state_index": 0,
+                    "relation": "lateral-lane-left",
+                    "source_spans": [],
+                    "source_sentences": [],
+                    "is_reversed": true
+                }
+            }
+        },
+        {
+            "pattern_id": "RTIP",
+            "pattern_name": "Right Turn Into Path (RTIP)",
+            "slice_id": "S3",
+            "subject_vehicle": "Toyota Sedan",
+            "target_vehicle": "Cruise AV",
+            "confidence": 1.0,
+            "matched_conditions": [
+                "subject_behavior=turn right",
+                "target_behavior=stationary",
+                "relation=lateral-lane-left",
+                "subject_speed=maintain",
+                "target_speed=stopped",
+                "subject_position=outside intersection",
+                "target_position=inside intersection"
+            ],
+            "evidence": {
+                "subject_state_id": "ToyotaSedan_B0_S0",
+                "target_state_id": "CruiseAV_B3_S0",
+                "relation": {
+                    "slice_id": "S3",
+                    "reference_state_id": "ToyotaSedan_B0_S0",
+                    "reference_vehicle": "Toyota Sedan",
+                    "reference_behavior": "Turn Right",
+                    "reference_behavior_order": 3,
+                    "reference_state_index": 0,
+                    "target_state_id": "CruiseAV_B3_S0",
+                    "target_vehicle": "Cruise AV",
+                    "target_behavior": "Stationary",
+                    "target_behavior_order": 0,
+                    "target_state_index": 0,
+                    "relation": "lateral-lane-left",
+                    "source_spans": [],
+                    "source_sentences": [],
+                    "is_reversed": true
+                }
+            }
+        }
+    ],
+    "key_event": {
+        "pattern_id": "RTIP",
+        "pattern_name": "Right Turn Into Path (RTIP)",
+        "slice_id": "S3",
+        "subject_vehicle": "Toyota Sedan",
+        "target_vehicle": "Cruise AV",
+        "confidence": 1.0,
+        "matched_conditions": [
+            "subject_behavior=turn right",
+            "target_behavior=stationary",
+            "relation=lateral-lane-left",
+            "subject_speed=maintain",
+            "target_speed=stopped",
+            "subject_position=outside intersection",
+            "target_position=inside intersection"
+        ],
+        "evidence": {
+            "subject_state_id": "ToyotaSedan_B0_S0",
+            "target_state_id": "CruiseAV_B3_S0",
+            "relation": {
+                "slice_id": "S3",
+                "reference_state_id": "ToyotaSedan_B0_S0",
+                "reference_vehicle": "Toyota Sedan",
+                "reference_behavior": "Turn Right",
+                "reference_behavior_order": 3,
+                "reference_state_index": 0,
+                "target_state_id": "CruiseAV_B3_S0",
+                "target_vehicle": "Cruise AV",
+                "target_behavior": "Stationary",
+                "target_behavior_order": 0,
+                "target_state_index": 0,
+                "relation": "lateral-lane-left",
+                "source_spans": [],
+                "source_sentences": [],
+                "is_reversed": true
+            }
+        }
+    }
+}

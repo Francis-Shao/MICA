@@ -1,0 +1,29 @@
+[
+    {
+        "vehicle_name": "Cruise AV",
+        "behavior": "Proceed Straight",
+        "state_index": 0,
+        "hint_type": "speed_transition_check",
+        "previous_speed": "Stopped",
+        "current_speed": "Maintain",
+        "description": "The vehicle speed state changes from 'Stopped' to 'Maintain'. Check whether the behavior and report evidence support this speed transition."
+    },
+    {
+        "vehicle_name": "Cruise AV",
+        "behavior": "Brake",
+        "state_index": 0,
+        "hint_type": "speed_transition_check",
+        "previous_speed": "Maintain",
+        "current_speed": "Decelerate",
+        "description": "The vehicle speed state changes from 'Maintain' to 'Decelerate'. Check whether the behavior and report evidence support this speed transition."
+    },
+    {
+        "vehicle_name": "Cruise AV",
+        "behavior": "Stationary",
+        "state_index": 0,
+        "hint_type": "speed_transition_check",
+        "previous_speed": "Decelerate",
+        "current_speed": "Stopped",
+        "description": "The vehicle speed state changes from 'Decelerate' to 'Stopped'. Check whether the behavior and report evidence support this speed transition."
+    }
+]

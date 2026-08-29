@@ -1,0 +1,80 @@
+{
+    "states": [
+        {
+            "state_id": "CruiseAV_B0_S0",
+            "vehicle_name": "Cruise AV",
+            "behavior": "Stationary",
+            "behavior_order": 0,
+            "state_index": 0,
+            "position": "Inside Intersection",
+            "speed": "Stopped",
+            "source_spans": [
+                "coming to a complete stop near the end of the intersection"
+            ],
+            "source_sentences": [
+                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+            ]
+        },
+        {
+            "state_id": "CruiseAV_B1_S0",
+            "vehicle_name": "Cruise AV",
+            "behavior": "Proceed Straight",
+            "behavior_order": 1,
+            "state_index": 0,
+            "position": "Inside Intersection",
+            "speed": "Maintain",
+            "source_spans": [
+                "entered the intersection on a green light",
+                "continued straight through the intersection"
+            ],
+            "source_sentences": [
+                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+            ]
+        },
+        {
+            "state_id": "CruiseAV_B2_S0",
+            "vehicle_name": "Cruise AV",
+            "behavior": "Brake",
+            "behavior_order": 2,
+            "state_index": 0,
+            "position": "Inside Intersection",
+            "speed": "Decelerate",
+            "source_spans": [
+                "before braking"
+            ],
+            "source_sentences": [
+                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+            ]
+        },
+        {
+            "state_id": "CruiseAV_B3_S0",
+            "vehicle_name": "Cruise AV",
+            "behavior": "Stationary",
+            "behavior_order": 3,
+            "state_index": 0,
+            "position": "Inside Intersection",
+            "speed": "Stopped",
+            "source_spans": [
+                "coming to a complete stop near the end of the intersection"
+            ],
+            "source_sentences": [
+                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+            ]
+        },
+        {
+            "state_id": "ToyotaSedan_B0_S0",
+            "vehicle_name": "Toyota Sedan",
+            "behavior": "Turn Right",
+            "behavior_order": 0,
+            "state_index": 0,
+            "position": "Outside Intersection",
+            "speed": "Maintain",
+            "source_spans": [
+                "was making an unprotected right turn on a red light"
+            ],
+            "source_sentences": [
+                "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+            ]
+        }
+    ]
+}

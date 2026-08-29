@@ -1,0 +1,2136 @@
+{
+    "report_text": "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street.\nThe Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection.\nAt the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV.\nShortly thereafter, the Toyota Sedan rear-ended the Cruise AV and made contact with the Cruise AV's rear bumper, damaging the rear right bumper.\nThe driver of the other vehicle left the scene without exchanging information.\nThere were no injuries and a police report was later filed.",
+    "vehicle_directions": {
+        "Cruise AV": "Northbound",
+        "Toyota Sedan": "Westbound"
+    },
+    "behavior_timelines": {
+        "Cruise AV": [
+            {
+                "vehicle_name": "Cruise AV",
+                "behavior": "Stationary",
+                "order": 0,
+                "context": {
+                    "source_spans": [
+                        "was stopped at a red light"
+                    ],
+                    "source_sentences": [
+                        "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street."
+                    ]
+                }
+            },
+            {
+                "vehicle_name": "Cruise AV",
+                "behavior": "Proceed Straight",
+                "order": 1,
+                "context": {
+                    "source_spans": [
+                        "continued straight through the intersection"
+                    ],
+                    "source_sentences": [
+                        "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                    ]
+                }
+            },
+            {
+                "vehicle_name": "Cruise AV",
+                "behavior": "Brake",
+                "order": 2,
+                "context": {
+                    "source_spans": [
+                        "before braking"
+                    ],
+                    "source_sentences": [
+                        "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                    ]
+                }
+            },
+            {
+                "vehicle_name": "Cruise AV",
+                "behavior": "Stationary",
+                "order": 3,
+                "context": {
+                    "source_spans": [
+                        "coming to a complete stop"
+                    ],
+                    "source_sentences": [
+                        "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                    ]
+                }
+            }
+        ],
+        "Toyota Sedan": [
+            {
+                "vehicle_name": "Toyota Sedan",
+                "behavior": "Turn Right",
+                "order": 0,
+                "context": {
+                    "source_spans": [
+                        "was making an unprotected right turn on a red light"
+                    ],
+                    "source_sentences": [
+                        "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                    ]
+                }
+            }
+        ]
+    },
+    "state_timelines": {
+        "Cruise AV": [
+            {
+                "vehicle_name": "Cruise AV",
+                "behavior": "Stationary",
+                "behavior_order": 0,
+                "states": [
+                    {
+                        "position": "Outside Intersection",
+                        "speed": "Stopped",
+                        "context": {
+                            "source_spans": [
+                                "was stopped at a red light"
+                            ],
+                            "source_sentences": [
+                                "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street."
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "vehicle_name": "Cruise AV",
+                "behavior": "Proceed Straight",
+                "behavior_order": 1,
+                "states": [
+                    {
+                        "position": "Inside Intersection",
+                        "speed": "Maintain",
+                        "context": {
+                            "source_spans": [
+                                "entered the intersection on a green light",
+                                "continued straight through the intersection"
+                            ],
+                            "source_sentences": [
+                                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "vehicle_name": "Cruise AV",
+                "behavior": "Brake",
+                "behavior_order": 2,
+                "states": [
+                    {
+                        "position": "Inside Intersection",
+                        "speed": "Decelerate",
+                        "context": {
+                            "source_spans": [
+                                "before braking"
+                            ],
+                            "source_sentences": [
+                                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "vehicle_name": "Cruise AV",
+                "behavior": "Stationary",
+                "behavior_order": 3,
+                "states": [
+                    {
+                        "position": "Inside Intersection",
+                        "speed": "Stopped",
+                        "context": {
+                            "source_spans": [
+                                "coming to a complete stop"
+                            ],
+                            "source_sentences": [
+                                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                            ]
+                        }
+                    }
+                ]
+            }
+        ],
+        "Toyota Sedan": [
+            {
+                "vehicle_name": "Toyota Sedan",
+                "behavior": "Turn Right",
+                "behavior_order": 0,
+                "states": [
+                    {
+                        "position": "Outside Intersection",
+                        "speed": "Maintain",
+                        "context": {
+                            "source_spans": [
+                                "was making an unprotected right turn on a red light"
+                            ],
+                            "source_sentences": [
+                                "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "temporal_relations": [
+        {
+            "source_state_id": "CruiseAV_B0_S0",
+            "target_state_id": "ToyotaSedan_B0_S0",
+            "source_vehicle": "Cruise AV",
+            "source_behavior": "Stationary",
+            "source_behavior_order": 0,
+            "source_state_index": 0,
+            "target_vehicle": "Toyota Sedan",
+            "target_behavior": "Turn Right",
+            "target_behavior_order": 0,
+            "target_state_index": 0,
+            "relation": "When",
+            "source_spans": [
+                "was stopped at a red light",
+                "At the same time"
+            ],
+            "source_sentences": [
+                "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street.",
+                "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+            ]
+        }
+    ],
+    "time_slices": [
+        {
+            "slice_id": "S0",
+            "slice_type": "explicit_when",
+            "participants": [
+                {
+                    "state_id": "CruiseAV_B0_S0",
+                    "vehicle_name": "Cruise AV",
+                    "behavior": "Stationary",
+                    "behavior_order": 0,
+                    "state_index": 0,
+                    "position": "Outside Intersection",
+                    "speed": "Stopped",
+                    "source_spans": [
+                        "was stopped at a red light"
+                    ],
+                    "source_sentences": [
+                        "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street."
+                    ]
+                },
+                {
+                    "state_id": "ToyotaSedan_B0_S0",
+                    "vehicle_name": "Toyota Sedan",
+                    "behavior": "Turn Right",
+                    "behavior_order": 0,
+                    "state_index": 0,
+                    "position": "Outside Intersection",
+                    "speed": "Maintain",
+                    "source_spans": [
+                        "was making an unprotected right turn on a red light"
+                    ],
+                    "source_sentences": [
+                        "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                    ]
+                }
+            ],
+            "source_relations": [
+                {
+                    "relation_id": "T0",
+                    "relation": "When",
+                    "source_state_id": "CruiseAV_B0_S0",
+                    "target_state_id": "ToyotaSedan_B0_S0",
+                    "source_spans": [
+                        "was stopped at a red light",
+                        "At the same time"
+                    ],
+                    "source_sentences": [
+                        "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street.",
+                        "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                    ]
+                }
+            ],
+            "notes": []
+        },
+        {
+            "slice_id": "S1",
+            "slice_type": "state_transition",
+            "participants": [
+                {
+                    "state_id": "CruiseAV_B1_S0",
+                    "vehicle_name": "Cruise AV",
+                    "behavior": "Proceed Straight",
+                    "behavior_order": 1,
+                    "state_index": 0,
+                    "position": "Inside Intersection",
+                    "speed": "Maintain",
+                    "source_spans": [
+                        "entered the intersection on a green light",
+                        "continued straight through the intersection"
+                    ],
+                    "source_sentences": [
+                        "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                    ]
+                },
+                {
+                    "state_id": "ToyotaSedan_B0_S0",
+                    "vehicle_name": "Toyota Sedan",
+                    "behavior": "Turn Right",
+                    "behavior_order": 0,
+                    "state_index": 0,
+                    "position": "Outside Intersection",
+                    "speed": "Maintain",
+                    "source_spans": [
+                        "was making an unprotected right turn on a red light"
+                    ],
+                    "source_sentences": [
+                        "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                    ]
+                }
+            ],
+            "source_relations": [],
+            "notes": [
+                "Context will be completed using previous vehicle states."
+            ]
+        },
+        {
+            "slice_id": "S2",
+            "slice_type": "state_transition",
+            "participants": [
+                {
+                    "state_id": "CruiseAV_B2_S0",
+                    "vehicle_name": "Cruise AV",
+                    "behavior": "Brake",
+                    "behavior_order": 2,
+                    "state_index": 0,
+                    "position": "Inside Intersection",
+                    "speed": "Decelerate",
+                    "source_spans": [
+                        "before braking"
+                    ],
+                    "source_sentences": [
+                        "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                    ]
+                },
+                {
+                    "state_id": "ToyotaSedan_B0_S0",
+                    "vehicle_name": "Toyota Sedan",
+                    "behavior": "Turn Right",
+                    "behavior_order": 0,
+                    "state_index": 0,
+                    "position": "Outside Intersection",
+                    "speed": "Maintain",
+                    "source_spans": [
+                        "was making an unprotected right turn on a red light"
+                    ],
+                    "source_sentences": [
+                        "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                    ]
+                }
+            ],
+            "source_relations": [],
+            "notes": [
+                "Context will be completed using previous vehicle states."
+            ]
+        },
+        {
+            "slice_id": "S3",
+            "slice_type": "state_transition",
+            "participants": [
+                {
+                    "state_id": "CruiseAV_B3_S0",
+                    "vehicle_name": "Cruise AV",
+                    "behavior": "Stationary",
+                    "behavior_order": 3,
+                    "state_index": 0,
+                    "position": "Inside Intersection",
+                    "speed": "Stopped",
+                    "source_spans": [
+                        "coming to a complete stop"
+                    ],
+                    "source_sentences": [
+                        "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                    ]
+                },
+                {
+                    "state_id": "ToyotaSedan_B0_S0",
+                    "vehicle_name": "Toyota Sedan",
+                    "behavior": "Turn Right",
+                    "behavior_order": 0,
+                    "state_index": 0,
+                    "position": "Outside Intersection",
+                    "speed": "Maintain",
+                    "source_spans": [
+                        "was making an unprotected right turn on a red light"
+                    ],
+                    "source_sentences": [
+                        "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                    ]
+                }
+            ],
+            "source_relations": [],
+            "notes": [
+                "Context will be completed using previous vehicle states."
+            ]
+        }
+    ],
+    "spatial_relations": [
+        {
+            "slice_id": "S0",
+            "reference_state_id": "CruiseAV_B0_S0",
+            "reference_vehicle": "Cruise AV",
+            "reference_behavior": "Stationary",
+            "reference_behavior_order": 0,
+            "reference_state_index": 0,
+            "target_state_id": "ToyotaSedan_B0_S0",
+            "target_vehicle": "Toyota Sedan",
+            "target_behavior": "Turn Right",
+            "target_behavior_order": 0,
+            "target_state_index": 0,
+            "relation": "Lateral-Lane-Right",
+            "source_spans": [],
+            "source_sentences": []
+        },
+        {
+            "slice_id": "S1",
+            "reference_state_id": "CruiseAV_B1_S0",
+            "reference_vehicle": "Cruise AV",
+            "reference_behavior": "Proceed Straight",
+            "reference_behavior_order": 1,
+            "reference_state_index": 0,
+            "target_state_id": "ToyotaSedan_B0_S0",
+            "target_vehicle": "Toyota Sedan",
+            "target_behavior": "Turn Right",
+            "target_behavior_order": 0,
+            "target_state_index": 0,
+            "relation": "Lateral-Lane-Right",
+            "source_spans": [],
+            "source_sentences": []
+        },
+        {
+            "slice_id": "S2",
+            "reference_state_id": "CruiseAV_B2_S0",
+            "reference_vehicle": "Cruise AV",
+            "reference_behavior": "Brake",
+            "reference_behavior_order": 2,
+            "reference_state_index": 0,
+            "target_state_id": "ToyotaSedan_B0_S0",
+            "target_vehicle": "Toyota Sedan",
+            "target_behavior": "Turn Right",
+            "target_behavior_order": 0,
+            "target_state_index": 0,
+            "relation": "Lateral-Lane-Right",
+            "source_spans": [],
+            "source_sentences": []
+        },
+        {
+            "slice_id": "S3",
+            "reference_state_id": "CruiseAV_B3_S0",
+            "reference_vehicle": "Cruise AV",
+            "reference_behavior": "Stationary",
+            "reference_behavior_order": 3,
+            "reference_state_index": 0,
+            "target_state_id": "ToyotaSedan_B0_S0",
+            "target_vehicle": "Toyota Sedan",
+            "target_behavior": "Turn Right",
+            "target_behavior_order": 0,
+            "target_state_index": 0,
+            "relation": "Lateral-Lane-Right",
+            "source_spans": [],
+            "source_sentences": []
+        }
+    ],
+    "collision_events": [],
+    "scenario_model": {
+        "scenario_id": "dmv_6",
+        "states": [
+            {
+                "state_id": "CruiseAV_B0_S0",
+                "vehicle_name": "Cruise AV",
+                "behavior": "Stationary",
+                "behavior_order": 0,
+                "state_index": 0,
+                "position": "Outside Intersection",
+                "speed": "Stopped",
+                "source_spans": [
+                    "was stopped at a red light"
+                ],
+                "source_sentences": [
+                    "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street."
+                ]
+            },
+            {
+                "state_id": "CruiseAV_B1_S0",
+                "vehicle_name": "Cruise AV",
+                "behavior": "Proceed Straight",
+                "behavior_order": 1,
+                "state_index": 0,
+                "position": "Inside Intersection",
+                "speed": "Maintain",
+                "source_spans": [
+                    "entered the intersection on a green light",
+                    "continued straight through the intersection"
+                ],
+                "source_sentences": [
+                    "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                ]
+            },
+            {
+                "state_id": "CruiseAV_B2_S0",
+                "vehicle_name": "Cruise AV",
+                "behavior": "Brake",
+                "behavior_order": 2,
+                "state_index": 0,
+                "position": "Inside Intersection",
+                "speed": "Decelerate",
+                "source_spans": [
+                    "before braking"
+                ],
+                "source_sentences": [
+                    "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                ]
+            },
+            {
+                "state_id": "CruiseAV_B3_S0",
+                "vehicle_name": "Cruise AV",
+                "behavior": "Stationary",
+                "behavior_order": 3,
+                "state_index": 0,
+                "position": "Inside Intersection",
+                "speed": "Stopped",
+                "source_spans": [
+                    "coming to a complete stop"
+                ],
+                "source_sentences": [
+                    "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                ]
+            },
+            {
+                "state_id": "ToyotaSedan_B0_S0",
+                "vehicle_name": "Toyota Sedan",
+                "behavior": "Turn Right",
+                "behavior_order": 0,
+                "state_index": 0,
+                "position": "Outside Intersection",
+                "speed": "Maintain",
+                "source_spans": [
+                    "was making an unprotected right turn on a red light"
+                ],
+                "source_sentences": [
+                    "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                ]
+            }
+        ],
+        "time_slices": [
+            {
+                "slice_id": "S0",
+                "slice_type": "explicit_when",
+                "participants": [
+                    {
+                        "state_id": "CruiseAV_B0_S0",
+                        "vehicle_name": "Cruise AV",
+                        "behavior": "Stationary",
+                        "behavior_order": 0,
+                        "state_index": 0,
+                        "position": "Outside Intersection",
+                        "speed": "Stopped",
+                        "source_spans": [
+                            "was stopped at a red light"
+                        ],
+                        "source_sentences": [
+                            "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street."
+                        ]
+                    },
+                    {
+                        "state_id": "ToyotaSedan_B0_S0",
+                        "vehicle_name": "Toyota Sedan",
+                        "behavior": "Turn Right",
+                        "behavior_order": 0,
+                        "state_index": 0,
+                        "position": "Outside Intersection",
+                        "speed": "Maintain",
+                        "source_spans": [
+                            "was making an unprotected right turn on a red light"
+                        ],
+                        "source_sentences": [
+                            "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                        ]
+                    }
+                ],
+                "spatial_relations": [
+                    {
+                        "slice_id": "S0",
+                        "reference_state_id": "CruiseAV_B0_S0",
+                        "reference_vehicle": "Cruise AV",
+                        "reference_behavior": "Stationary",
+                        "reference_behavior_order": 0,
+                        "reference_state_index": 0,
+                        "target_state_id": "ToyotaSedan_B0_S0",
+                        "target_vehicle": "Toyota Sedan",
+                        "target_behavior": "Turn Right",
+                        "target_behavior_order": 0,
+                        "target_state_index": 0,
+                        "relation": "Lateral-Lane-Right",
+                        "source_spans": [],
+                        "source_sentences": []
+                    }
+                ],
+                "temporal_source_relations": [
+                    {
+                        "relation_id": "T0",
+                        "relation": "When",
+                        "source_state_id": "CruiseAV_B0_S0",
+                        "target_state_id": "ToyotaSedan_B0_S0",
+                        "source_spans": [
+                            "was stopped at a red light",
+                            "At the same time"
+                        ],
+                        "source_sentences": [
+                            "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street.",
+                            "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                        ]
+                    }
+                ],
+                "notes": []
+            },
+            {
+                "slice_id": "S1",
+                "slice_type": "state_transition",
+                "participants": [
+                    {
+                        "state_id": "CruiseAV_B1_S0",
+                        "vehicle_name": "Cruise AV",
+                        "behavior": "Proceed Straight",
+                        "behavior_order": 1,
+                        "state_index": 0,
+                        "position": "Inside Intersection",
+                        "speed": "Maintain",
+                        "source_spans": [
+                            "entered the intersection on a green light",
+                            "continued straight through the intersection"
+                        ],
+                        "source_sentences": [
+                            "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                        ]
+                    },
+                    {
+                        "state_id": "ToyotaSedan_B0_S0",
+                        "vehicle_name": "Toyota Sedan",
+                        "behavior": "Turn Right",
+                        "behavior_order": 0,
+                        "state_index": 0,
+                        "position": "Outside Intersection",
+                        "speed": "Maintain",
+                        "source_spans": [
+                            "was making an unprotected right turn on a red light"
+                        ],
+                        "source_sentences": [
+                            "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                        ]
+                    }
+                ],
+                "spatial_relations": [
+                    {
+                        "slice_id": "S1",
+                        "reference_state_id": "CruiseAV_B1_S0",
+                        "reference_vehicle": "Cruise AV",
+                        "reference_behavior": "Proceed Straight",
+                        "reference_behavior_order": 1,
+                        "reference_state_index": 0,
+                        "target_state_id": "ToyotaSedan_B0_S0",
+                        "target_vehicle": "Toyota Sedan",
+                        "target_behavior": "Turn Right",
+                        "target_behavior_order": 0,
+                        "target_state_index": 0,
+                        "relation": "Lateral-Lane-Right",
+                        "source_spans": [],
+                        "source_sentences": []
+                    }
+                ],
+                "temporal_source_relations": [],
+                "notes": [
+                    "Context will be completed using previous vehicle states."
+                ]
+            },
+            {
+                "slice_id": "S2",
+                "slice_type": "state_transition",
+                "participants": [
+                    {
+                        "state_id": "CruiseAV_B2_S0",
+                        "vehicle_name": "Cruise AV",
+                        "behavior": "Brake",
+                        "behavior_order": 2,
+                        "state_index": 0,
+                        "position": "Inside Intersection",
+                        "speed": "Decelerate",
+                        "source_spans": [
+                            "before braking"
+                        ],
+                        "source_sentences": [
+                            "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                        ]
+                    },
+                    {
+                        "state_id": "ToyotaSedan_B0_S0",
+                        "vehicle_name": "Toyota Sedan",
+                        "behavior": "Turn Right",
+                        "behavior_order": 0,
+                        "state_index": 0,
+                        "position": "Outside Intersection",
+                        "speed": "Maintain",
+                        "source_spans": [
+                            "was making an unprotected right turn on a red light"
+                        ],
+                        "source_sentences": [
+                            "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                        ]
+                    }
+                ],
+                "spatial_relations": [
+                    {
+                        "slice_id": "S2",
+                        "reference_state_id": "CruiseAV_B2_S0",
+                        "reference_vehicle": "Cruise AV",
+                        "reference_behavior": "Brake",
+                        "reference_behavior_order": 2,
+                        "reference_state_index": 0,
+                        "target_state_id": "ToyotaSedan_B0_S0",
+                        "target_vehicle": "Toyota Sedan",
+                        "target_behavior": "Turn Right",
+                        "target_behavior_order": 0,
+                        "target_state_index": 0,
+                        "relation": "Lateral-Lane-Right",
+                        "source_spans": [],
+                        "source_sentences": []
+                    }
+                ],
+                "temporal_source_relations": [],
+                "notes": [
+                    "Context will be completed using previous vehicle states."
+                ]
+            },
+            {
+                "slice_id": "S3",
+                "slice_type": "state_transition",
+                "participants": [
+                    {
+                        "state_id": "CruiseAV_B3_S0",
+                        "vehicle_name": "Cruise AV",
+                        "behavior": "Stationary",
+                        "behavior_order": 3,
+                        "state_index": 0,
+                        "position": "Inside Intersection",
+                        "speed": "Stopped",
+                        "source_spans": [
+                            "coming to a complete stop"
+                        ],
+                        "source_sentences": [
+                            "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                        ]
+                    },
+                    {
+                        "state_id": "ToyotaSedan_B0_S0",
+                        "vehicle_name": "Toyota Sedan",
+                        "behavior": "Turn Right",
+                        "behavior_order": 0,
+                        "state_index": 0,
+                        "position": "Outside Intersection",
+                        "speed": "Maintain",
+                        "source_spans": [
+                            "was making an unprotected right turn on a red light"
+                        ],
+                        "source_sentences": [
+                            "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                        ]
+                    }
+                ],
+                "spatial_relations": [
+                    {
+                        "slice_id": "S3",
+                        "reference_state_id": "CruiseAV_B3_S0",
+                        "reference_vehicle": "Cruise AV",
+                        "reference_behavior": "Stationary",
+                        "reference_behavior_order": 3,
+                        "reference_state_index": 0,
+                        "target_state_id": "ToyotaSedan_B0_S0",
+                        "target_vehicle": "Toyota Sedan",
+                        "target_behavior": "Turn Right",
+                        "target_behavior_order": 0,
+                        "target_state_index": 0,
+                        "relation": "Lateral-Lane-Right",
+                        "source_spans": [],
+                        "source_sentences": []
+                    }
+                ],
+                "temporal_source_relations": [],
+                "notes": [
+                    "Context will be completed using previous vehicle states."
+                ]
+            }
+        ],
+        "temporal_relations": [
+            {
+                "source_state_id": "CruiseAV_B0_S0",
+                "target_state_id": "ToyotaSedan_B0_S0",
+                "source_vehicle": "Cruise AV",
+                "source_behavior": "Stationary",
+                "source_behavior_order": 0,
+                "source_state_index": 0,
+                "target_vehicle": "Toyota Sedan",
+                "target_behavior": "Turn Right",
+                "target_behavior_order": 0,
+                "target_state_index": 0,
+                "relation": "When",
+                "source_spans": [
+                    "was stopped at a red light",
+                    "At the same time"
+                ],
+                "source_sentences": [
+                    "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street.",
+                    "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                ]
+            }
+        ],
+        "spatial_relations": [
+            {
+                "slice_id": "S0",
+                "reference_state_id": "CruiseAV_B0_S0",
+                "reference_vehicle": "Cruise AV",
+                "reference_behavior": "Stationary",
+                "reference_behavior_order": 0,
+                "reference_state_index": 0,
+                "target_state_id": "ToyotaSedan_B0_S0",
+                "target_vehicle": "Toyota Sedan",
+                "target_behavior": "Turn Right",
+                "target_behavior_order": 0,
+                "target_state_index": 0,
+                "relation": "Lateral-Lane-Right",
+                "source_spans": [],
+                "source_sentences": []
+            },
+            {
+                "slice_id": "S1",
+                "reference_state_id": "CruiseAV_B1_S0",
+                "reference_vehicle": "Cruise AV",
+                "reference_behavior": "Proceed Straight",
+                "reference_behavior_order": 1,
+                "reference_state_index": 0,
+                "target_state_id": "ToyotaSedan_B0_S0",
+                "target_vehicle": "Toyota Sedan",
+                "target_behavior": "Turn Right",
+                "target_behavior_order": 0,
+                "target_state_index": 0,
+                "relation": "Lateral-Lane-Right",
+                "source_spans": [],
+                "source_sentences": []
+            },
+            {
+                "slice_id": "S2",
+                "reference_state_id": "CruiseAV_B2_S0",
+                "reference_vehicle": "Cruise AV",
+                "reference_behavior": "Brake",
+                "reference_behavior_order": 2,
+                "reference_state_index": 0,
+                "target_state_id": "ToyotaSedan_B0_S0",
+                "target_vehicle": "Toyota Sedan",
+                "target_behavior": "Turn Right",
+                "target_behavior_order": 0,
+                "target_state_index": 0,
+                "relation": "Lateral-Lane-Right",
+                "source_spans": [],
+                "source_sentences": []
+            },
+            {
+                "slice_id": "S3",
+                "reference_state_id": "CruiseAV_B3_S0",
+                "reference_vehicle": "Cruise AV",
+                "reference_behavior": "Stationary",
+                "reference_behavior_order": 3,
+                "reference_state_index": 0,
+                "target_state_id": "ToyotaSedan_B0_S0",
+                "target_vehicle": "Toyota Sedan",
+                "target_behavior": "Turn Right",
+                "target_behavior_order": 0,
+                "target_state_index": 0,
+                "relation": "Lateral-Lane-Right",
+                "source_spans": [],
+                "source_sentences": []
+            }
+        ],
+        "metadata": {
+            "num_states": 5,
+            "num_time_slices": 4,
+            "num_temporal_relations": 1,
+            "num_spatial_relations": 4
+        }
+    },
+    "identified_events": [],
+    "extra": {
+        "raw_behavior_result": {
+            "vehicles": {
+                "Cruise AV": {
+                    "travel_direction": "Northbound",
+                    "behaviors": [
+                        {
+                            "behavior": "Stationary",
+                            "source_spans": [
+                                "was stopped at a red light"
+                            ],
+                            "source_sentences": [
+                                "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street."
+                            ]
+                        },
+                        {
+                            "behavior": "Proceed Straight",
+                            "source_spans": [
+                                "continued straight through the intersection"
+                            ],
+                            "source_sentences": [
+                                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                            ]
+                        },
+                        {
+                            "behavior": "Brake",
+                            "source_spans": [
+                                "before braking"
+                            ],
+                            "source_sentences": [
+                                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                            ]
+                        },
+                        {
+                            "behavior": "Stationary",
+                            "source_spans": [
+                                "coming to a complete stop"
+                            ],
+                            "source_sentences": [
+                                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                            ]
+                        }
+                    ]
+                },
+                "Toyota Sedan": {
+                    "travel_direction": "Westbound",
+                    "behaviors": [
+                        {
+                            "behavior": "Turn Right",
+                            "source_spans": [
+                                "was making an unprotected right turn on a red light"
+                            ],
+                            "source_sentences": [
+                                "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "raw_behavior_check_result": {
+            "is_valid": true,
+            "errors": [],
+            "corrected_behavior_timelines": {
+                "Cruise AV": [
+                    {
+                        "behavior": "Stationary",
+                        "source_spans": [
+                            "was stopped at a red light"
+                        ],
+                        "source_sentences": [
+                            "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street."
+                        ]
+                    },
+                    {
+                        "behavior": "Proceed Straight",
+                        "source_spans": [
+                            "continued straight through the intersection"
+                        ],
+                        "source_sentences": [
+                            "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                        ]
+                    },
+                    {
+                        "behavior": "Brake",
+                        "source_spans": [
+                            "before braking"
+                        ],
+                        "source_sentences": [
+                            "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                        ]
+                    },
+                    {
+                        "behavior": "Stationary",
+                        "source_spans": [
+                            "coming to a complete stop"
+                        ],
+                        "source_sentences": [
+                            "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                        ]
+                    }
+                ],
+                "Toyota Sedan": [
+                    {
+                        "behavior": "Turn Right",
+                        "source_spans": [
+                            "was making an unprotected right turn on a red light"
+                        ],
+                        "source_sentences": [
+                            "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                        ]
+                    }
+                ]
+            }
+        },
+        "checked_behavior_result": {
+            "Cruise AV": [
+                {
+                    "behavior": "Stationary",
+                    "source_spans": [
+                        "was stopped at a red light"
+                    ],
+                    "source_sentences": [
+                        "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street."
+                    ]
+                },
+                {
+                    "behavior": "Proceed Straight",
+                    "source_spans": [
+                        "continued straight through the intersection"
+                    ],
+                    "source_sentences": [
+                        "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                    ]
+                },
+                {
+                    "behavior": "Brake",
+                    "source_spans": [
+                        "before braking"
+                    ],
+                    "source_sentences": [
+                        "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                    ]
+                },
+                {
+                    "behavior": "Stationary",
+                    "source_spans": [
+                        "coming to a complete stop"
+                    ],
+                    "source_sentences": [
+                        "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                    ]
+                }
+            ],
+            "Toyota Sedan": [
+                {
+                    "behavior": "Turn Right",
+                    "source_spans": [
+                        "was making an unprotected right turn on a red light"
+                    ],
+                    "source_sentences": [
+                        "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                    ]
+                }
+            ]
+        },
+        "raw_state_result": {
+            "Cruise AV": [
+                {
+                    "behavior": "Stationary",
+                    "states": [
+                        {
+                            "position": "Outside Intersection",
+                            "speed": "Stopped",
+                            "source_spans": [
+                                "was stopped at a red light"
+                            ],
+                            "source_sentences": [
+                                "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "behavior": "Proceed Straight",
+                    "states": [
+                        {
+                            "position": "Inside Intersection",
+                            "speed": "Maintain",
+                            "source_spans": [
+                                "entered the intersection on a green light",
+                                "continued straight through the intersection"
+                            ],
+                            "source_sentences": [
+                                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "behavior": "Brake",
+                    "states": [
+                        {
+                            "position": "Inside Intersection",
+                            "speed": "Decelerate",
+                            "source_spans": [
+                                "before braking"
+                            ],
+                            "source_sentences": [
+                                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "behavior": "Stationary",
+                    "states": [
+                        {
+                            "position": "Inside Intersection",
+                            "speed": "Stopped",
+                            "source_spans": [
+                                "coming to a complete stop near the end of the intersection"
+                            ],
+                            "source_sentences": [
+                                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "Toyota Sedan": [
+                {
+                    "behavior": "Turn Right",
+                    "states": [
+                        {
+                            "position": "Outside Intersection",
+                            "speed": "Maintain",
+                            "source_spans": [
+                                "was making an unprotected right turn on a red light"
+                            ],
+                            "source_sentences": [
+                                "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "raw_state_check_result": {
+            "is_valid": false,
+            "errors": [
+                {
+                    "vehicle_name": "Cruise AV",
+                    "behavior": "Stationary",
+                    "error_type": "wrong_position",
+                    "description": "The state is described as inside the intersection, but the report says the Cruise AV was stopped at a red light before entering the intersection, which supports Outside Intersection.",
+                    "evidence": [
+                        "was stopped at a red light"
+                    ],
+                    "suggested_fix": "Change position to Outside Intersection."
+                },
+                {
+                    "vehicle_name": "Cruise AV",
+                    "behavior": "Proceed Straight",
+                    "error_type": "wrong_position",
+                    "description": "The state is inside the intersection, which is supported because the report says the Cruise AV entered and continued straight through the intersection.",
+                    "evidence": [
+                        "entered the intersection on a green light",
+                        "continued straight through the intersection"
+                    ],
+                    "suggested_fix": "Keep position as Inside Intersection."
+                },
+                {
+                    "vehicle_name": "Cruise AV",
+                    "behavior": "Brake",
+                    "error_type": "wrong_position",
+                    "description": "The state is inside the intersection, which is supported because braking occurred after entering and while moving through the intersection.",
+                    "evidence": [
+                        "before braking",
+                        "continued straight through the intersection"
+                    ],
+                    "suggested_fix": "Keep position as Inside Intersection."
+                },
+                {
+                    "vehicle_name": "Cruise AV",
+                    "behavior": "Stationary",
+                    "error_type": "wrong_position",
+                    "description": "The stop is reported near the end of the intersection, so Inside Intersection is supported.",
+                    "evidence": [
+                        "coming to a complete stop near the end of the intersection"
+                    ],
+                    "suggested_fix": "Keep position as Inside Intersection."
+                }
+            ],
+            "corrected_state_timelines": {
+                "Cruise AV": [
+                    {
+                        "behavior": "Stationary",
+                        "states": [
+                            {
+                                "position": "Outside Intersection",
+                                "speed": "Stopped",
+                                "source_spans": [
+                                    "was stopped at a red light"
+                                ],
+                                "source_sentences": [
+                                    "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street."
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "behavior": "Proceed Straight",
+                        "states": [
+                            {
+                                "position": "Inside Intersection",
+                                "speed": "Maintain",
+                                "source_spans": [
+                                    "entered the intersection on a green light",
+                                    "continued straight through the intersection"
+                                ],
+                                "source_sentences": [
+                                    "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "behavior": "Brake",
+                        "states": [
+                            {
+                                "position": "Inside Intersection",
+                                "speed": "Decelerate",
+                                "source_spans": [
+                                    "before braking"
+                                ],
+                                "source_sentences": [
+                                    "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "behavior": "Stationary",
+                        "states": [
+                            {
+                                "position": "Inside Intersection",
+                                "speed": "Stopped",
+                                "source_spans": [
+                                    "coming to a complete stop"
+                                ],
+                                "source_sentences": [
+                                    "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "Toyota Sedan": [
+                    {
+                        "behavior": "Turn Right",
+                        "states": [
+                            {
+                                "position": "Outside Intersection",
+                                "speed": "Maintain",
+                                "source_spans": [
+                                    "was making an unprotected right turn on a red light"
+                                ],
+                                "source_sentences": [
+                                    "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "state_check_hints": [
+            {
+                "vehicle_name": "Cruise AV",
+                "behavior": "Proceed Straight",
+                "state_index": 0,
+                "hint_type": "speed_transition_check",
+                "previous_speed": "Stopped",
+                "current_speed": "Maintain",
+                "description": "The vehicle speed state changes from 'Stopped' to 'Maintain'. Check whether the behavior and report evidence support this speed transition."
+            },
+            {
+                "vehicle_name": "Cruise AV",
+                "behavior": "Brake",
+                "state_index": 0,
+                "hint_type": "speed_transition_check",
+                "previous_speed": "Maintain",
+                "current_speed": "Decelerate",
+                "description": "The vehicle speed state changes from 'Maintain' to 'Decelerate'. Check whether the behavior and report evidence support this speed transition."
+            },
+            {
+                "vehicle_name": "Cruise AV",
+                "behavior": "Stationary",
+                "state_index": 0,
+                "hint_type": "speed_transition_check",
+                "previous_speed": "Decelerate",
+                "current_speed": "Stopped",
+                "description": "The vehicle speed state changes from 'Decelerate' to 'Stopped'. Check whether the behavior and report evidence support this speed transition."
+            }
+        ],
+        "checked_state_result": {
+            "Cruise AV": [
+                {
+                    "behavior": "Stationary",
+                    "states": [
+                        {
+                            "position": "Outside Intersection",
+                            "speed": "Stopped",
+                            "source_spans": [
+                                "was stopped at a red light"
+                            ],
+                            "source_sentences": [
+                                "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "behavior": "Proceed Straight",
+                    "states": [
+                        {
+                            "position": "Inside Intersection",
+                            "speed": "Maintain",
+                            "source_spans": [
+                                "entered the intersection on a green light",
+                                "continued straight through the intersection"
+                            ],
+                            "source_sentences": [
+                                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "behavior": "Brake",
+                    "states": [
+                        {
+                            "position": "Inside Intersection",
+                            "speed": "Decelerate",
+                            "source_spans": [
+                                "before braking"
+                            ],
+                            "source_sentences": [
+                                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "behavior": "Stationary",
+                    "states": [
+                        {
+                            "position": "Inside Intersection",
+                            "speed": "Stopped",
+                            "source_spans": [
+                                "coming to a complete stop"
+                            ],
+                            "source_sentences": [
+                                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "Toyota Sedan": [
+                {
+                    "behavior": "Turn Right",
+                    "states": [
+                        {
+                            "position": "Outside Intersection",
+                            "speed": "Maintain",
+                            "source_spans": [
+                                "was making an unprotected right turn on a red light"
+                            ],
+                            "source_sentences": [
+                                "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "raw_temporal_result": {
+            "temporal_relations": [
+                {
+                    "source_state_id": "CruiseAV_B0_S0",
+                    "target_state_id": "ToyotaSedan_B0_S0",
+                    "source_vehicle": "Cruise AV",
+                    "source_behavior": "Stationary",
+                    "source_behavior_order": 0,
+                    "source_state_index": 0,
+                    "target_vehicle": "Toyota Sedan",
+                    "target_behavior": "Turn Right",
+                    "target_behavior_order": 0,
+                    "target_state_index": 0,
+                    "relation": "When",
+                    "source_spans": [
+                        "was stopped at a red light",
+                        "At the same time"
+                    ],
+                    "source_sentences": [
+                        "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street.",
+                        "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                    ]
+                }
+            ]
+        },
+        "temporal_state_information": {
+            "states": [
+                {
+                    "state_id": "CruiseAV_B0_S0",
+                    "vehicle_name": "Cruise AV",
+                    "behavior": "Stationary",
+                    "behavior_order": 0,
+                    "state_index": 0,
+                    "position": "Outside Intersection",
+                    "speed": "Stopped",
+                    "source_spans": [
+                        "was stopped at a red light"
+                    ],
+                    "source_sentences": [
+                        "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street."
+                    ]
+                },
+                {
+                    "state_id": "CruiseAV_B1_S0",
+                    "vehicle_name": "Cruise AV",
+                    "behavior": "Proceed Straight",
+                    "behavior_order": 1,
+                    "state_index": 0,
+                    "position": "Inside Intersection",
+                    "speed": "Maintain",
+                    "source_spans": [
+                        "entered the intersection on a green light",
+                        "continued straight through the intersection"
+                    ],
+                    "source_sentences": [
+                        "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                    ]
+                },
+                {
+                    "state_id": "CruiseAV_B2_S0",
+                    "vehicle_name": "Cruise AV",
+                    "behavior": "Brake",
+                    "behavior_order": 2,
+                    "state_index": 0,
+                    "position": "Inside Intersection",
+                    "speed": "Decelerate",
+                    "source_spans": [
+                        "before braking"
+                    ],
+                    "source_sentences": [
+                        "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                    ]
+                },
+                {
+                    "state_id": "CruiseAV_B3_S0",
+                    "vehicle_name": "Cruise AV",
+                    "behavior": "Stationary",
+                    "behavior_order": 3,
+                    "state_index": 0,
+                    "position": "Inside Intersection",
+                    "speed": "Stopped",
+                    "source_spans": [
+                        "coming to a complete stop"
+                    ],
+                    "source_sentences": [
+                        "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                    ]
+                },
+                {
+                    "state_id": "ToyotaSedan_B0_S0",
+                    "vehicle_name": "Toyota Sedan",
+                    "behavior": "Turn Right",
+                    "behavior_order": 0,
+                    "state_index": 0,
+                    "position": "Outside Intersection",
+                    "speed": "Maintain",
+                    "source_spans": [
+                        "was making an unprotected right turn on a red light"
+                    ],
+                    "source_sentences": [
+                        "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                    ]
+                }
+            ]
+        },
+        "temporal_candidates": [],
+        "raw_time_slicing_result": {
+            "time_slices": [
+                {
+                    "slice_id": "S0",
+                    "slice_type": "explicit_when",
+                    "participants": [
+                        {
+                            "state_id": "CruiseAV_B0_S0",
+                            "vehicle_name": "Cruise AV",
+                            "behavior": "Stationary",
+                            "behavior_order": 0,
+                            "state_index": 0,
+                            "position": "Outside Intersection",
+                            "speed": "Stopped",
+                            "source_spans": [
+                                "was stopped at a red light"
+                            ],
+                            "source_sentences": [
+                                "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street."
+                            ]
+                        },
+                        {
+                            "state_id": "ToyotaSedan_B0_S0",
+                            "vehicle_name": "Toyota Sedan",
+                            "behavior": "Turn Right",
+                            "behavior_order": 0,
+                            "state_index": 0,
+                            "position": "Outside Intersection",
+                            "speed": "Maintain",
+                            "source_spans": [
+                                "was making an unprotected right turn on a red light"
+                            ],
+                            "source_sentences": [
+                                "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                            ]
+                        }
+                    ],
+                    "source_relations": [
+                        {
+                            "relation_id": "T0",
+                            "relation": "When",
+                            "source_state_id": "CruiseAV_B0_S0",
+                            "target_state_id": "ToyotaSedan_B0_S0",
+                            "source_spans": [
+                                "was stopped at a red light",
+                                "At the same time"
+                            ],
+                            "source_sentences": [
+                                "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street.",
+                                "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                            ]
+                        }
+                    ],
+                    "notes": []
+                },
+                {
+                    "slice_id": "S1",
+                    "slice_type": "state_transition",
+                    "participants": [
+                        {
+                            "state_id": "CruiseAV_B1_S0",
+                            "vehicle_name": "Cruise AV",
+                            "behavior": "Proceed Straight",
+                            "behavior_order": 1,
+                            "state_index": 0,
+                            "position": "Inside Intersection",
+                            "speed": "Maintain",
+                            "source_spans": [
+                                "entered the intersection on a green light",
+                                "continued straight through the intersection"
+                            ],
+                            "source_sentences": [
+                                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                            ]
+                        },
+                        {
+                            "state_id": "ToyotaSedan_B0_S0",
+                            "vehicle_name": "Toyota Sedan",
+                            "behavior": "Turn Right",
+                            "behavior_order": 0,
+                            "state_index": 0,
+                            "position": "Outside Intersection",
+                            "speed": "Maintain",
+                            "source_spans": [
+                                "was making an unprotected right turn on a red light"
+                            ],
+                            "source_sentences": [
+                                "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                            ]
+                        }
+                    ],
+                    "source_relations": [],
+                    "notes": [
+                        "Context will be completed using previous vehicle states."
+                    ]
+                },
+                {
+                    "slice_id": "S2",
+                    "slice_type": "state_transition",
+                    "participants": [
+                        {
+                            "state_id": "CruiseAV_B2_S0",
+                            "vehicle_name": "Cruise AV",
+                            "behavior": "Brake",
+                            "behavior_order": 2,
+                            "state_index": 0,
+                            "position": "Inside Intersection",
+                            "speed": "Decelerate",
+                            "source_spans": [
+                                "before braking"
+                            ],
+                            "source_sentences": [
+                                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                            ]
+                        },
+                        {
+                            "state_id": "ToyotaSedan_B0_S0",
+                            "vehicle_name": "Toyota Sedan",
+                            "behavior": "Turn Right",
+                            "behavior_order": 0,
+                            "state_index": 0,
+                            "position": "Outside Intersection",
+                            "speed": "Maintain",
+                            "source_spans": [
+                                "was making an unprotected right turn on a red light"
+                            ],
+                            "source_sentences": [
+                                "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                            ]
+                        }
+                    ],
+                    "source_relations": [],
+                    "notes": [
+                        "Context will be completed using previous vehicle states."
+                    ]
+                },
+                {
+                    "slice_id": "S3",
+                    "slice_type": "state_transition",
+                    "participants": [
+                        {
+                            "state_id": "CruiseAV_B3_S0",
+                            "vehicle_name": "Cruise AV",
+                            "behavior": "Stationary",
+                            "behavior_order": 3,
+                            "state_index": 0,
+                            "position": "Inside Intersection",
+                            "speed": "Stopped",
+                            "source_spans": [
+                                "coming to a complete stop"
+                            ],
+                            "source_sentences": [
+                                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                            ]
+                        },
+                        {
+                            "state_id": "ToyotaSedan_B0_S0",
+                            "vehicle_name": "Toyota Sedan",
+                            "behavior": "Turn Right",
+                            "behavior_order": 0,
+                            "state_index": 0,
+                            "position": "Outside Intersection",
+                            "speed": "Maintain",
+                            "source_spans": [
+                                "was making an unprotected right turn on a red light"
+                            ],
+                            "source_sentences": [
+                                "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                            ]
+                        }
+                    ],
+                    "source_relations": [],
+                    "notes": [
+                        "Context will be completed using previous vehicle states."
+                    ]
+                }
+            ]
+        },
+        "raw_spatial_result": {
+            "spatial_relations": [
+                {
+                    "slice_id": "S0",
+                    "reference_state_id": "CruiseAV_B0_S0",
+                    "reference_vehicle": "Cruise AV",
+                    "reference_behavior": "Stationary",
+                    "reference_behavior_order": 0,
+                    "reference_state_index": 0,
+                    "target_state_id": "ToyotaSedan_B0_S0",
+                    "target_vehicle": "Toyota Sedan",
+                    "target_behavior": "Turn Right",
+                    "target_behavior_order": 0,
+                    "target_state_index": 0,
+                    "relation": "Lateral-Lane-Right",
+                    "source_spans": [],
+                    "source_sentences": []
+                },
+                {
+                    "slice_id": "S1",
+                    "reference_state_id": "CruiseAV_B1_S0",
+                    "reference_vehicle": "Cruise AV",
+                    "reference_behavior": "Proceed Straight",
+                    "reference_behavior_order": 1,
+                    "reference_state_index": 0,
+                    "target_state_id": "ToyotaSedan_B0_S0",
+                    "target_vehicle": "Toyota Sedan",
+                    "target_behavior": "Turn Right",
+                    "target_behavior_order": 0,
+                    "target_state_index": 0,
+                    "relation": "Lateral-Lane-Right",
+                    "source_spans": [],
+                    "source_sentences": []
+                },
+                {
+                    "slice_id": "S2",
+                    "reference_state_id": "CruiseAV_B2_S0",
+                    "reference_vehicle": "Cruise AV",
+                    "reference_behavior": "Brake",
+                    "reference_behavior_order": 2,
+                    "reference_state_index": 0,
+                    "target_state_id": "ToyotaSedan_B0_S0",
+                    "target_vehicle": "Toyota Sedan",
+                    "target_behavior": "Turn Right",
+                    "target_behavior_order": 0,
+                    "target_state_index": 0,
+                    "relation": "Lateral-Lane-Right",
+                    "source_spans": [],
+                    "source_sentences": []
+                },
+                {
+                    "slice_id": "S3",
+                    "reference_state_id": "CruiseAV_B3_S0",
+                    "reference_vehicle": "Cruise AV",
+                    "reference_behavior": "Stationary",
+                    "reference_behavior_order": 3,
+                    "reference_state_index": 0,
+                    "target_state_id": "ToyotaSedan_B0_S0",
+                    "target_vehicle": "Toyota Sedan",
+                    "target_behavior": "Turn Right",
+                    "target_behavior_order": 0,
+                    "target_state_index": 0,
+                    "relation": "Lateral-Lane-Right",
+                    "source_spans": [],
+                    "source_sentences": []
+                }
+            ]
+        },
+        "raw_scenario_model": {
+            "scenario_id": "dmv_6",
+            "states": [
+                {
+                    "state_id": "CruiseAV_B0_S0",
+                    "vehicle_name": "Cruise AV",
+                    "behavior": "Stationary",
+                    "behavior_order": 0,
+                    "state_index": 0,
+                    "position": "Outside Intersection",
+                    "speed": "Stopped",
+                    "source_spans": [
+                        "was stopped at a red light"
+                    ],
+                    "source_sentences": [
+                        "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street."
+                    ]
+                },
+                {
+                    "state_id": "CruiseAV_B1_S0",
+                    "vehicle_name": "Cruise AV",
+                    "behavior": "Proceed Straight",
+                    "behavior_order": 1,
+                    "state_index": 0,
+                    "position": "Inside Intersection",
+                    "speed": "Maintain",
+                    "source_spans": [
+                        "entered the intersection on a green light",
+                        "continued straight through the intersection"
+                    ],
+                    "source_sentences": [
+                        "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                    ]
+                },
+                {
+                    "state_id": "CruiseAV_B2_S0",
+                    "vehicle_name": "Cruise AV",
+                    "behavior": "Brake",
+                    "behavior_order": 2,
+                    "state_index": 0,
+                    "position": "Inside Intersection",
+                    "speed": "Decelerate",
+                    "source_spans": [
+                        "before braking"
+                    ],
+                    "source_sentences": [
+                        "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                    ]
+                },
+                {
+                    "state_id": "CruiseAV_B3_S0",
+                    "vehicle_name": "Cruise AV",
+                    "behavior": "Stationary",
+                    "behavior_order": 3,
+                    "state_index": 0,
+                    "position": "Inside Intersection",
+                    "speed": "Stopped",
+                    "source_spans": [
+                        "coming to a complete stop"
+                    ],
+                    "source_sentences": [
+                        "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                    ]
+                },
+                {
+                    "state_id": "ToyotaSedan_B0_S0",
+                    "vehicle_name": "Toyota Sedan",
+                    "behavior": "Turn Right",
+                    "behavior_order": 0,
+                    "state_index": 0,
+                    "position": "Outside Intersection",
+                    "speed": "Maintain",
+                    "source_spans": [
+                        "was making an unprotected right turn on a red light"
+                    ],
+                    "source_sentences": [
+                        "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                    ]
+                }
+            ],
+            "time_slices": [
+                {
+                    "slice_id": "S0",
+                    "slice_type": "explicit_when",
+                    "participants": [
+                        {
+                            "state_id": "CruiseAV_B0_S0",
+                            "vehicle_name": "Cruise AV",
+                            "behavior": "Stationary",
+                            "behavior_order": 0,
+                            "state_index": 0,
+                            "position": "Outside Intersection",
+                            "speed": "Stopped",
+                            "source_spans": [
+                                "was stopped at a red light"
+                            ],
+                            "source_sentences": [
+                                "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street."
+                            ]
+                        },
+                        {
+                            "state_id": "ToyotaSedan_B0_S0",
+                            "vehicle_name": "Toyota Sedan",
+                            "behavior": "Turn Right",
+                            "behavior_order": 0,
+                            "state_index": 0,
+                            "position": "Outside Intersection",
+                            "speed": "Maintain",
+                            "source_spans": [
+                                "was making an unprotected right turn on a red light"
+                            ],
+                            "source_sentences": [
+                                "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                            ]
+                        }
+                    ],
+                    "spatial_relations": [
+                        {
+                            "slice_id": "S0",
+                            "reference_state_id": "CruiseAV_B0_S0",
+                            "reference_vehicle": "Cruise AV",
+                            "reference_behavior": "Stationary",
+                            "reference_behavior_order": 0,
+                            "reference_state_index": 0,
+                            "target_state_id": "ToyotaSedan_B0_S0",
+                            "target_vehicle": "Toyota Sedan",
+                            "target_behavior": "Turn Right",
+                            "target_behavior_order": 0,
+                            "target_state_index": 0,
+                            "relation": "Lateral-Lane-Right",
+                            "source_spans": [],
+                            "source_sentences": []
+                        }
+                    ],
+                    "temporal_source_relations": [
+                        {
+                            "relation_id": "T0",
+                            "relation": "When",
+                            "source_state_id": "CruiseAV_B0_S0",
+                            "target_state_id": "ToyotaSedan_B0_S0",
+                            "source_spans": [
+                                "was stopped at a red light",
+                                "At the same time"
+                            ],
+                            "source_sentences": [
+                                "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street.",
+                                "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                            ]
+                        }
+                    ],
+                    "notes": []
+                },
+                {
+                    "slice_id": "S1",
+                    "slice_type": "state_transition",
+                    "participants": [
+                        {
+                            "state_id": "CruiseAV_B1_S0",
+                            "vehicle_name": "Cruise AV",
+                            "behavior": "Proceed Straight",
+                            "behavior_order": 1,
+                            "state_index": 0,
+                            "position": "Inside Intersection",
+                            "speed": "Maintain",
+                            "source_spans": [
+                                "entered the intersection on a green light",
+                                "continued straight through the intersection"
+                            ],
+                            "source_sentences": [
+                                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                            ]
+                        },
+                        {
+                            "state_id": "ToyotaSedan_B0_S0",
+                            "vehicle_name": "Toyota Sedan",
+                            "behavior": "Turn Right",
+                            "behavior_order": 0,
+                            "state_index": 0,
+                            "position": "Outside Intersection",
+                            "speed": "Maintain",
+                            "source_spans": [
+                                "was making an unprotected right turn on a red light"
+                            ],
+                            "source_sentences": [
+                                "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                            ]
+                        }
+                    ],
+                    "spatial_relations": [
+                        {
+                            "slice_id": "S1",
+                            "reference_state_id": "CruiseAV_B1_S0",
+                            "reference_vehicle": "Cruise AV",
+                            "reference_behavior": "Proceed Straight",
+                            "reference_behavior_order": 1,
+                            "reference_state_index": 0,
+                            "target_state_id": "ToyotaSedan_B0_S0",
+                            "target_vehicle": "Toyota Sedan",
+                            "target_behavior": "Turn Right",
+                            "target_behavior_order": 0,
+                            "target_state_index": 0,
+                            "relation": "Lateral-Lane-Right",
+                            "source_spans": [],
+                            "source_sentences": []
+                        }
+                    ],
+                    "temporal_source_relations": [],
+                    "notes": [
+                        "Context will be completed using previous vehicle states."
+                    ]
+                },
+                {
+                    "slice_id": "S2",
+                    "slice_type": "state_transition",
+                    "participants": [
+                        {
+                            "state_id": "CruiseAV_B2_S0",
+                            "vehicle_name": "Cruise AV",
+                            "behavior": "Brake",
+                            "behavior_order": 2,
+                            "state_index": 0,
+                            "position": "Inside Intersection",
+                            "speed": "Decelerate",
+                            "source_spans": [
+                                "before braking"
+                            ],
+                            "source_sentences": [
+                                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                            ]
+                        },
+                        {
+                            "state_id": "ToyotaSedan_B0_S0",
+                            "vehicle_name": "Toyota Sedan",
+                            "behavior": "Turn Right",
+                            "behavior_order": 0,
+                            "state_index": 0,
+                            "position": "Outside Intersection",
+                            "speed": "Maintain",
+                            "source_spans": [
+                                "was making an unprotected right turn on a red light"
+                            ],
+                            "source_sentences": [
+                                "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                            ]
+                        }
+                    ],
+                    "spatial_relations": [
+                        {
+                            "slice_id": "S2",
+                            "reference_state_id": "CruiseAV_B2_S0",
+                            "reference_vehicle": "Cruise AV",
+                            "reference_behavior": "Brake",
+                            "reference_behavior_order": 2,
+                            "reference_state_index": 0,
+                            "target_state_id": "ToyotaSedan_B0_S0",
+                            "target_vehicle": "Toyota Sedan",
+                            "target_behavior": "Turn Right",
+                            "target_behavior_order": 0,
+                            "target_state_index": 0,
+                            "relation": "Lateral-Lane-Right",
+                            "source_spans": [],
+                            "source_sentences": []
+                        }
+                    ],
+                    "temporal_source_relations": [],
+                    "notes": [
+                        "Context will be completed using previous vehicle states."
+                    ]
+                },
+                {
+                    "slice_id": "S3",
+                    "slice_type": "state_transition",
+                    "participants": [
+                        {
+                            "state_id": "CruiseAV_B3_S0",
+                            "vehicle_name": "Cruise AV",
+                            "behavior": "Stationary",
+                            "behavior_order": 3,
+                            "state_index": 0,
+                            "position": "Inside Intersection",
+                            "speed": "Stopped",
+                            "source_spans": [
+                                "coming to a complete stop"
+                            ],
+                            "source_sentences": [
+                                "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                            ]
+                        },
+                        {
+                            "state_id": "ToyotaSedan_B0_S0",
+                            "vehicle_name": "Toyota Sedan",
+                            "behavior": "Turn Right",
+                            "behavior_order": 0,
+                            "state_index": 0,
+                            "position": "Outside Intersection",
+                            "speed": "Maintain",
+                            "source_spans": [
+                                "was making an unprotected right turn on a red light"
+                            ],
+                            "source_sentences": [
+                                "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                            ]
+                        }
+                    ],
+                    "spatial_relations": [
+                        {
+                            "slice_id": "S3",
+                            "reference_state_id": "CruiseAV_B3_S0",
+                            "reference_vehicle": "Cruise AV",
+                            "reference_behavior": "Stationary",
+                            "reference_behavior_order": 3,
+                            "reference_state_index": 0,
+                            "target_state_id": "ToyotaSedan_B0_S0",
+                            "target_vehicle": "Toyota Sedan",
+                            "target_behavior": "Turn Right",
+                            "target_behavior_order": 0,
+                            "target_state_index": 0,
+                            "relation": "Lateral-Lane-Right",
+                            "source_spans": [],
+                            "source_sentences": []
+                        }
+                    ],
+                    "temporal_source_relations": [],
+                    "notes": [
+                        "Context will be completed using previous vehicle states."
+                    ]
+                }
+            ],
+            "temporal_relations": [
+                {
+                    "source_state_id": "CruiseAV_B0_S0",
+                    "target_state_id": "ToyotaSedan_B0_S0",
+                    "source_vehicle": "Cruise AV",
+                    "source_behavior": "Stationary",
+                    "source_behavior_order": 0,
+                    "source_state_index": 0,
+                    "target_vehicle": "Toyota Sedan",
+                    "target_behavior": "Turn Right",
+                    "target_behavior_order": 0,
+                    "target_state_index": 0,
+                    "relation": "When",
+                    "source_spans": [
+                        "was stopped at a red light",
+                        "At the same time"
+                    ],
+                    "source_sentences": [
+                        "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street.",
+                        "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                    ]
+                }
+            ],
+            "spatial_relations": [
+                {
+                    "slice_id": "S0",
+                    "reference_state_id": "CruiseAV_B0_S0",
+                    "reference_vehicle": "Cruise AV",
+                    "reference_behavior": "Stationary",
+                    "reference_behavior_order": 0,
+                    "reference_state_index": 0,
+                    "target_state_id": "ToyotaSedan_B0_S0",
+                    "target_vehicle": "Toyota Sedan",
+                    "target_behavior": "Turn Right",
+                    "target_behavior_order": 0,
+                    "target_state_index": 0,
+                    "relation": "Lateral-Lane-Right",
+                    "source_spans": [],
+                    "source_sentences": []
+                },
+                {
+                    "slice_id": "S1",
+                    "reference_state_id": "CruiseAV_B1_S0",
+                    "reference_vehicle": "Cruise AV",
+                    "reference_behavior": "Proceed Straight",
+                    "reference_behavior_order": 1,
+                    "reference_state_index": 0,
+                    "target_state_id": "ToyotaSedan_B0_S0",
+                    "target_vehicle": "Toyota Sedan",
+                    "target_behavior": "Turn Right",
+                    "target_behavior_order": 0,
+                    "target_state_index": 0,
+                    "relation": "Lateral-Lane-Right",
+                    "source_spans": [],
+                    "source_sentences": []
+                },
+                {
+                    "slice_id": "S2",
+                    "reference_state_id": "CruiseAV_B2_S0",
+                    "reference_vehicle": "Cruise AV",
+                    "reference_behavior": "Brake",
+                    "reference_behavior_order": 2,
+                    "reference_state_index": 0,
+                    "target_state_id": "ToyotaSedan_B0_S0",
+                    "target_vehicle": "Toyota Sedan",
+                    "target_behavior": "Turn Right",
+                    "target_behavior_order": 0,
+                    "target_state_index": 0,
+                    "relation": "Lateral-Lane-Right",
+                    "source_spans": [],
+                    "source_sentences": []
+                },
+                {
+                    "slice_id": "S3",
+                    "reference_state_id": "CruiseAV_B3_S0",
+                    "reference_vehicle": "Cruise AV",
+                    "reference_behavior": "Stationary",
+                    "reference_behavior_order": 3,
+                    "reference_state_index": 0,
+                    "target_state_id": "ToyotaSedan_B0_S0",
+                    "target_vehicle": "Toyota Sedan",
+                    "target_behavior": "Turn Right",
+                    "target_behavior_order": 0,
+                    "target_state_index": 0,
+                    "relation": "Lateral-Lane-Right",
+                    "source_spans": [],
+                    "source_sentences": []
+                }
+            ],
+            "metadata": {
+                "num_states": 5,
+                "num_time_slices": 4,
+                "num_temporal_relations": 1,
+                "num_spatial_relations": 4
+            }
+        }
+    }
+}

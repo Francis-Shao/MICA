@@ -1,0 +1,71 @@
+{
+    "Cruise AV": [
+        {
+            "vehicle_name": "Cruise AV",
+            "behavior": "Stationary",
+            "order": 0,
+            "context": {
+                "source_spans": [
+                    "was stopped at a red light"
+                ],
+                "source_sentences": [
+                    "A Cruise autonomous vehicle (\"Cruise AV\"), operating in driverless autonomous mode, was stopped at a red light on northbound Van Ness Avenue at the intersection with Sacramento Street."
+                ]
+            }
+        },
+        {
+            "vehicle_name": "Cruise AV",
+            "behavior": "Proceed Straight",
+            "order": 1,
+            "context": {
+                "source_spans": [
+                    "continued straight through the intersection"
+                ],
+                "source_sentences": [
+                    "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                ]
+            }
+        },
+        {
+            "vehicle_name": "Cruise AV",
+            "behavior": "Brake",
+            "order": 2,
+            "context": {
+                "source_spans": [
+                    "before braking"
+                ],
+                "source_sentences": [
+                    "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                ]
+            }
+        },
+        {
+            "vehicle_name": "Cruise AV",
+            "behavior": "Stationary",
+            "order": 3,
+            "context": {
+                "source_spans": [
+                    "coming to a complete stop"
+                ],
+                "source_sentences": [
+                    "The Cruise AV entered the intersection on a green light and continued straight through the intersection before braking and coming to a complete stop near the end of the intersection."
+                ]
+            }
+        }
+    ],
+    "Toyota Sedan": [
+        {
+            "vehicle_name": "Toyota Sedan",
+            "behavior": "Turn Right",
+            "order": 0,
+            "context": {
+                "source_spans": [
+                    "was making an unprotected right turn on a red light"
+                ],
+                "source_sentences": [
+                    "At the same time, a Toyota Sedan on westbound Sacramento Street began was making an unprotected right turn on a red light onto northbound Van Ness Avenue behind the Cruise AV."
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,116 @@
+You are an expert in accident report analysis and accident information extraction.
+
+Your task is to identify the collision-involved vehicles in the accident report,
+extract their travel directions, and extract their behavior timelines.
+
+Accident Report Description:
+{accident_report}
+
+
+Question:
+Which vehicles physically collided with each other in the final collision?
+Only extract these vehicles.
+Ignore vehicles involved only in earlier interactions but not in the collision.
+For each collision vehicle, extract its travel direction and behavior timeline.
+
+
+Behavior List and Explanation:
+
+Stationary:
+The vehicle is stopped and not moving.
+
+Proceed Straight:
+The vehicle moves forward along its current road or lane without turning.
+
+Turn Left:
+The vehicle performs a left turn at an intersection, junction, or roadway.
+
+Turn Right:
+The vehicle performs a right turn at an intersection, junction, or roadway.
+
+Make U-Turn:
+The vehicle reverses its driving direction by making a U-turn.
+
+Back:
+The vehicle moves backward or reverses.
+
+Brake:
+The vehicle slows down or attempts to stop.
+
+Change Lane:
+The vehicle moves from one lane to another lane traveling in the same direction.
+
+Enter Opposite Lane:
+The vehicle crosses into a lane intended for vehicles traveling in the opposite direction.
+
+Park:
+The vehicle moves into a parked condition.
+
+Unpark:
+The vehicle leaves a parked position and starts moving.
+
+
+Travel Direction:
+
+Eastbound:
+The vehicle is traveling toward the east.
+
+Westbound:
+The vehicle is traveling toward the west.
+
+Southbound:
+The vehicle is traveling toward the south.
+
+Northbound:
+The vehicle is traveling toward the north.
+
+
+Extraction Rules:
+
+(1) Identify collision participants based on the final contact event.
+Only vehicles that physically made contact during the collision should be extracted.
+(2) Ignore vehicles that only affected the situation before the collision, such as vehicles changing lanes, yielding, or passing nearby.
+(3) Extract behaviors in chronological order.
+(4) Only extract behaviors explicitly stated or strongly implied in the report.
+(5) Do not infer unsupported behaviors.
+(6) If a vehicle is described as traveling along a road without turning,
+classify it as "Proceed Straight".
+(7) If multiple consecutive descriptions correspond to the same behavior,
+do not repeat the behavior.
+(8) Each vehicle must have an independent behavior timeline.
+(9) Use only behaviors from the predefined behavior list.
+(10) For each behavior, provide the shortest text span supporting the behavior.
+(11) Evidence must be copied verbatim from the report.
+(12) Temporal clauses such as "as", "when", "after", and "before" must be used to determine behavior order.
+(13) Extract the travel direction of each collision-involved vehicle.
+(14) Travel direction must always be one of: Eastbound, Westbound, Southbound, Northbound.
+(15) Use explicitly stated directions whenever available. If the direction is not explicitly stated, infer the most likely direction based on vehicle movement, lane relationship, road geometry, and collision context.
+(16) Do not output "Unknown", "Unclear", "N/A", or any other value outside the four allowed directions.
+(17) Do not infer direction only from turning behavior. A turn describes a maneuver, not necessarily the original travel direction.
+Output Constraints:
+(1) Output must be valid JSON.
+(2) Do not include explanations.
+
+Use the following format:
+
+{{
+    "vehicles": {{
+        "Vehicle Name": {{
+            "travel_direction": "Direction",
+            "behaviors": [
+                {{
+                    "behavior": "Behavior Name",
+                    "source_spans": [
+                        "supporting span"
+                    ],
+                    "source_sentences": [
+                        "complete supporting sentence"
+                    ]
+                }}
+            ]
+        }}
+    }}
+}}
+
+
+Answer:

@@ -1,0 +1,91 @@
+Accident Report:
+{report}
+
+Task:
+Encode the pre-crash scenario of the two vehicles involved in the final collision.
+
+Important Definitions:
+- Only focus on the two vehicles involved in the final collision.
+- V1 and V2 must refer to the two collision-involved vehicles.
+- Prefer assigning V1 to the striking vehicle, the vehicle making the main maneuver,
+  or the vehicle whose action most directly creates the conflict.
+- Assign V2 to the struck vehicle or the counterpart vehicle in the conflict.
+- If the striking vehicle is unclear, assign V1 and V2 according to their order of
+  appearance in the collision description.
+- Encode only the pre-crash state immediately relevant to the collision.
+- Each field must contain exactly one categorical value.
+- Do not extract a complete behavior timeline.
+- Do not infer information after the collision.
+- If a field is ambiguous, choose the best supported value from the report.
+
+Encoding Fields:
+
+Crash Type:
+1 = Head-on
+2 = Side swipe
+3 = Rear end
+4 = Broadside
+5 = Other
+
+Direction V1 / V2:
+0 = Stopped
+1 = Forward
+2 = Backward
+
+Speed Change V1 / V2:
+0 = Constant
+1 = Accelerating
+2 = Decelerating
+
+Relative Position:
+1 = Same lane & direction
+2 = Same lane reverse direction
+3 = Lateral lane - right
+4 = Lateral lane - left
+
+Movement - Turning V1 / V2:
+0 = None
+1 = Right turn
+2 = Left turn
+
+Movement - Other V1 / V2:
+1 = Proceeding straight
+2 = Passing other vehicle
+3 = Changing lanes
+4 = Making U turn
+5 = Entering traffic
+6 = Merging
+7 = Ran off road
+8 = Parking maneuver
+9 = Parked
+10 = Travelling wrong way
+11 = Lane splitting
+12 = Other
+13 = None
+
+Output Format:
+Return only valid JSON in the following format.
+
+{{
+  "vehicles": {{
+    "V1": "vehicle name",
+    "V2": "vehicle name"
+  }},
+  "encoding": {{
+    "crash_type": integer,
+    "direction_v1": integer,
+    "direction_v2": integer,
+    "speed_change_v1": integer,
+    "speed_change_v2": integer,
+    "relative_position": integer,
+    "movement_turning_v1": integer,
+    "movement_turning_v2": integer,
+    "movement_other_v1": integer,
+    "movement_other_v2": integer
+  }}
+}}
+
+Remember:
+- Output JSON only.
+- Do not include markdown.
+- Do not include explanations.
